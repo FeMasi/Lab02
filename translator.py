@@ -24,6 +24,11 @@ class Translator:
         parola_aliena, traduzione = entry.strip().split()
         self.diz.addWord(parola_aliena.lower(), traduzione.lower())
 
+    def handleMultipleAdd(self, entry):
+        parola_aliena = entry.strip(0).split
+        traduzioni = []
+
+
 
     def handleTranslate(self, query):
         print(self.diz.translate(query))
