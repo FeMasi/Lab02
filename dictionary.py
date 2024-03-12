@@ -23,6 +23,13 @@ class Dictionary:
     def addWord(self, parola_aliena, traduzione):
         self.dizionario[parola_aliena.lower()] = traduzione.lower()
         print(f"Parola '{parola_aliena}' aggiunta al dizionario.")
+        try:
+            with (open(self.file_path, 'a') as file):
+                file.write(parola_aliena.lower() + " " + traduzione.lower() +"\n")
+
+        except FileNotFoundError:
+            print("File non trovato")
+
 
 
     def translate(self, parola_aliena):
